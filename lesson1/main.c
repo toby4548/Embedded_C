@@ -15,7 +15,5 @@ int main() {
     ++counter;
     ++counter;
     ++counter;
-    ++counter;
-    
     return 0;
 }
