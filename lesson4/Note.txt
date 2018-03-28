@@ -1,0 +1,8 @@
+Talk about blink LED
+The process is much more complicate than arduino.
+1. Find all the GPIO registers in the datasheet
+2. Turn off clock gating(saving power) to use the GPIO
+3. find the register and set GPIO to output
+4. find the register and set GPIO output type to digital output
+5. set the GPIO data to turn on the LED.
+6. use while loop to simulate delay.
