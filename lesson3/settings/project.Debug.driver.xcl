@@ -8,11 +8,13 @@
 
 "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\arm\CONFIG\debugger\TexasInstruments\TM4C123GH6PM.ddf" 
 
+"--drv_verify_download" 
+
 "--semihosting" 
 
 "--device=TM4C123GH6PM" 
 
-"--multicore_nr_of_cores=1" 
+"--drv_interface_speed=500" 
 
 
 

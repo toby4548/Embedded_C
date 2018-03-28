@@ -1,0 +1,5 @@
+Talk about pointer.
+the pointer can hold the memory address of variable.
+It can also be very dangerous.
+The demo shows that by doing a casting. The pointer can accidentally change the value held by some address.
+Use with caution.
