@@ -1,0 +1,5 @@
+volatile means the value can be changed from outside of program(eg. pushing button by the human)
+valitile key word will ask the compiler not to optimize these value.
+
+the vendor offers the definition of registers as header file. By including the header file, we can directly use the
+keyword to replace the register address and avoid use pointer.
