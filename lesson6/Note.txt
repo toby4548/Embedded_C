@@ -1,5 +1,3 @@
-volatile means the value can be changed from outside of program(eg. pushing button by the human)
-valitile key word will ask the compiler not to optimize these value.
-
-the vendor offers the definition of registers as header file. By including the header file, we can directly use the
-keyword to replace the register address and avoid use pointer.
+The right left shift is different between unsigned(put 0 when shift out of range) and signed
+(put 1 when shift out of range, makes the sign always correct) shift. They have different machine code.
+Bit-wise operation make the compiler has better high-level understanding of the intend to help generating better code.
