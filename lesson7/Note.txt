@@ -1,0 +1,5 @@
+Iterrupt: when occur, processor stop ececuting the current the process and start to execute interrupt process.
+
+In C, the pointer to the first position of an array.
+
+Use AHB to enable faster speed.
