@@ -1,5 +1,10 @@
-Iterrupt: when occur, processor stop ececuting the current the process and start to execute interrupt process.
+Function is a reusable code.
 
-In C, the pointer to the first position of an array.
+during the function, in assambly, instead of branch, the function use BL to remember the line in R14, the R13(SP: stack pointer)
+ remeber the stack. 
 
-Use AHB to enable faster speed.
+The stack is only growing to the top. eg. the stack use 0x20000ff8, then the counter in the function start with 0x2000ff4.
+
+main is also a function.
+
+the function can pass numbers and save in the R0 for the parameter in the function.

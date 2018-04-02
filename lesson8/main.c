@@ -4,6 +4,13 @@
 #define LED_BLUE  (1U<<2)
 #define LED_GREEN (1U<<3)
 
+void delay(int iter) {
+    int volatile counter = 0;
+    while (counter<iter) {
+            counter++;
+        }
+}
+
 int main() {
    
     SYSCTL_RCGCGPIO_R |= (1U<<5); //Turn off Port F clock gating
@@ -19,16 +26,11 @@ int main() {
         GPIO_PORTF_AHB_DATA_BITS_R[LED_RED] = LED_RED;
         
       
-        int volatile counter[2] = {0,0};
-        while (counter[0]<1000000) {
-            counter[0]++;
-        }
+        delay(1000000);
         
         GPIO_PORTF_AHB_DATA_BITS_R[LED_RED] = 0; //set GPIO data to turn off the LED
-        //counter = 0;
-        while (*(counter+1)<1000000) {
-            counter[1]++;
-        } 
+        
+        delay(500000);
     }
     
     return 0;
