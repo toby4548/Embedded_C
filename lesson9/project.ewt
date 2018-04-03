@@ -2370,6 +2370,12 @@
         </settings>
     </configuration>
     <file>
+        <name>$PROJ_DIR$\delay.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\delay.h</name>
+    </file>
+    <file>
         <name>$PROJ_DIR$\lm4f120h5qr.h</name>
     </file>
     <file>
