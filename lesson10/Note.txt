@@ -1,0 +1,3 @@
+The function can be seperate into .h and .c file for clear definition.
+The recursive function make the stack grows which should be avoid because on the embedded system.
+the memory is not enough, missuse of the recursion will cause stack grows and eventualy cause stackoverflow.
