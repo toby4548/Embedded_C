@@ -1,10 +1,23 @@
 Function is a reusable code.
 
-during the function, in assambly, instead of branch, the function use BL to remember the line in R14, the R13(SP: stack pointer)
- remeber the stack. 
+during the function, in assambly, instead of branch, the function use BL to remember the line to return in R14(LR), BL itself is 4 byte
+
+instead of most instructions are 2 byte.
+
+the R13(SP: stack pointer) remeber the stack. 
 
 The stack is only growing to the top. eg. the stack use 0x20000ff8, then the counter in the function start with 0x2000ff4.
 
-main is also a function.
+when return, BX instruction is used. The LR remeber the odd number, which is weird, cause the return address should always be even.
 
-the function can pass numbers and save in the R0 for the parameter in the function.
+the reason of that is because the least significant bit is used as instruction exchange bit. If == 1, use thumb instruction, if == 0 use
+
+arm instruction, but the cortex-m doesn't support arm instruction, so it's always odd.
+
+main is also a function. called leaf function.
+
+The stacks holds the local variables and save the return address.
+
+the function can pass numbers and save in the R0 for the parameter in the function. The local variable however save on the stack
+
+which is same as SP.
