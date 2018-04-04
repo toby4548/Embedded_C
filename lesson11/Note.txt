@@ -1,0 +1,1 @@
+static keyword will allocate parameter globally but not on stack.
