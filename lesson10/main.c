@@ -5,7 +5,8 @@
 #define LED_BLUE  (1U<<2)
 #define LED_GREEN (1U<<3)
 
-//unsigned fact(unsigned n);
+unsigned fact(unsigned n);
+
 void swap(int *x, int *y) {
     int tmp = *x;
     *x = *y;
@@ -13,7 +14,7 @@ void swap(int *x, int *y) {
 }
 
 int *new_swap(int *x, int *y) {
-    int static tmp[2];
+    static int tmp[2];
     tmp[0] = *x;
     tmp[1] = *y;
     *x = tmp[1];
@@ -28,7 +29,7 @@ int main() {
     x =fact(0U);
     x = 2U + 3U *fact(1U);
     (void)fact(7U);
-    */ 
+    */
     
     
   
@@ -61,7 +62,7 @@ int main() {
     //return 0;
 }
 
-/*
+
 unsigned fact(unsigned n){
     //0! = 1
     //n! = n*(n-1)! for n >0
@@ -72,7 +73,7 @@ unsigned fact(unsigned n){
         return 1U;
     }
     else {
-        return n*fact(n-1U);
+        return foo[n]*fact(n-1U);
     }
 }
-*/
+

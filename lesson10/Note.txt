@@ -1,1 +1,6 @@
+Stackoverflow: the stack grows out of the memory address.
+Assign a address out of the memory boundary may cause the main never return and finally cause stackoverflow.
+
+originally the function using pass by value and will not change the argument. To change it, use pointer and pass the value.
+all local variable go out of scope when function return. To solve it, use the static keyword.
 static keyword will allocate parameter globally but not on stack.
