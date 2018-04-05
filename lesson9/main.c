@@ -41,7 +41,11 @@ unsigned fact(unsigned n){
     //0! = 1
     //n! = n*(n-1)! for n >0
   
-  if (n == 0U) return 1U;
-  else return n*fact(n-1U);
+    if (n == 0U) {
+        return 1U;
+    }
+    else {
+        return n*fact(n-1U);
+    }
 }
 

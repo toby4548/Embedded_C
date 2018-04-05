@@ -1,3 +1,6 @@
 The function can be seperate into .h and .c file for clear definition.
+The parameter passes into the function saved in the R0, for recursive, both R0 and R4 are used for recursive call.
+R0 is used for return value. Actually R0~R3 and R12 can be used for pass value. R4~R11 can also be use, but should be clear and 
+move the value to the R0~R3 and R12.
 The recursive function make the stack grows which should be avoid because on the embedded system.
 the memory is not enough, missuse of the recursion will cause stack grows and eventualy cause stackoverflow.
