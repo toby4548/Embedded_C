@@ -1084,7 +1084,7 @@
             <IarPane-34106>
                 <expressions>
                     <item>counter</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>
