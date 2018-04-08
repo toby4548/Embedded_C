@@ -1,9 +1,19 @@
+#include <stdint.h>
 #include "lm4f120h5qr.h"
 #include "delay.h"
 
 #define LED_RED   (1U<<1)
 #define LED_BLUE  (1U<<2)
 #define LED_GREEN (1U<<3)
+
+uint8_t u8a, u8b;
+uint16_t u16c, u16d;
+uint32_t u32e, u32f;
+
+int8_t s8;
+int16_t s16;
+int32_t s32;
+
 
 //unsigned fact(unsigned n);
 void swap(int *x, int *y) {
@@ -22,16 +32,38 @@ int *new_swap(int *x, int *y) {
 }
 
 int main() {
-    /*
-    unsigned volatile x;
+
     
-    x =fact(0U);
-    x = 2U + 3U *fact(1U);
-    (void)fact(7U);
-    */ 
+    u8a = sizeof(u8a);
+    u16c = sizeof(uint16_t);
+    u32e = sizeof(uint32_t);
     
+    u8a = 0xA1U;
+    u16c = 0xc1c2U;
+    u32e = 0xe1e2e3e4U;
     
-  
+    u8b = u8a;
+    u16d = u16c;
+    u32f = u32e;
+    
+    u16c = 40000U;
+    u16d = 30000U;
+    u32e = (uint32_t)u16c+u16d;
+    
+    u16c = 100U;
+    s32 = 10 - (int16_t)u16c;
+    
+    if ((int32_t)u32e > -1) { //always false w/o cast
+        u8a = 1U;
+    }
+    else {
+        u8a = 0U;
+    }
+    
+    u8a = 0xffU;
+    if ((uint8_t)~u8a ==0x00U) {
+        u8b = 1U;
+    }
     
   
     SYSCTL_RCGCGPIO_R |= (1U<<5); //Turn off Port F clock gating
@@ -46,9 +78,7 @@ int main() {
     
         int *p = new_swap(&x, &y);
       
-        //GPIO_PORTF_DATA_R |= LED_RED; //set GPIO data to turn on the LED
-        //*((unsigned long volatile *)(0x40025000+(LED_RED<<2))) = LED_RED;
-        //*(GPIO_PORTF_DATA_BITS_R + LED_RED) = LED_RED;
+
         GPIO_PORTF_AHB_DATA_BITS_R[LED_RED] = LED_RED;
         
         delay(p[0]);
@@ -61,18 +91,3 @@ int main() {
     //return 0;
 }
 
-/*
-unsigned fact(unsigned n){
-    //0! = 1
-    //n! = n*(n-1)! for n >0
-    unsigned foo[6];
-    foo[n] = n;
-  
-    if (n == 0U) {
-        return 1U;
-    }
-    else {
-        return n*fact(n-1U);
-    }
-}
-*/

@@ -1,1 +1,8 @@
-static keyword will allocate parameter globally but not on stack.
+c99 support the stdint.h data type defined for different size embedded system.
+
+The order of byte in the multi byte variable is reversed because ARM is the low-indian machine(eg. e4 e3 e2 e1).
+
+the code use in 32 bit machine may overflow on the 16bit processor because the C program automatic promote. 
+To solve it, manually cast 16 bit into 32 bit.
+this also caused problem between unsigned and signed in 16 and 32 bit. 
+
