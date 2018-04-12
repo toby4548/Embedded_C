@@ -140,6 +140,7 @@
             </IarPane-34065>
             <IarPane-34077>
                 <MemGotoHistory>
+                    <item>0x20000008</item>
                     <item>0x20000000</item>
                     <item>0x20000FF8</item>
                     <item>0x20000FF4</item>
@@ -151,8 +152,8 @@
                     <item>0x20008000</item>
                 </MemGotoHistory>
                 <ZoneNumber>0</ZoneNumber>
-                <SelectionAnchor>536870912</SelectionAnchor>
-                <SelectionEnd>536870916</SelectionEnd>
+                <SelectionAnchor>536870920</SelectionAnchor>
+                <SelectionEnd>536870924</SelectionEnd>
                 <UnitsPerGroup>1</UnitsPerGroup>
                 <EndianMode>0</EndianMode>
                 <DataCovEnabled>0</DataCovEnabled>
@@ -202,7 +203,7 @@
                 <RecentlyUsedMenus>1</RecentlyUsedMenus>
                 <MenuShadows>1</MenuShadows>
                 <ShowAllMenusAfterDelay>1</ShowAllMenusAfterDelay>
-                <CommandsUsage>A00200001A0013860000F801000040E10000010000001086000053000000208100000300000004860000010000009A860000010000000C860000010000000E840000020000001A860000010000005E860000040000000E810000010000001F8100000100000000E1000002000000148600000100000022DE0000010000005886000001000000118600000B0000000086000001000000558600000100000005810000020000000284000001000000468100002400000060860000060000005D8600000800000008860000010000000586000001000000</CommandsUsage>
+                <CommandsUsage>A20200001A0040E100000100000013860000F80100001086000053000000208100000300000004860000010000009A860000010000000E840000020000000C860000010000001F810000010000000E810000010000005E860000040000001A8600000100000000E1000002000000588600000100000022DE00000100000014860000010000000284000001000000058100000200000055860000010000000086000001000000118600000B0000004681000026000000608600000600000008860000010000005D860000080000000586000001000000</CommandsUsage>
             </MFCToolBarParameters>
             <CommandManager>
                 <CommandsWithoutImages>2D00FFFFFFFF838600005886000004DC00001B8600001C8600001D8600001E8600005A8600005B86000053860000A4860000A386000078860000798600007784000007840000808C000044D500007C8400007D8400007E84000083840000848400003C8400003D840000408400004C8400003E8400004B8400004D8400003F8400003A8400003B8400005A8400005B8400000D8400000F8400000884000054840000328100001C81000009840000D484000053840000</CommandsWithoutImages>
@@ -1081,8 +1082,7 @@
             </BasePane-34106>
             <IarPane-34106>
                 <expressions>
-                    <item>counter</item>
-                    <item>s32</item>
+                    <item>p1</item>
                     <item></item>
                 </expressions>
                 <col-names>
@@ -1114,7 +1114,7 @@
             <IarPane-34107>
                 <expressions>
                     <item>p_int</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>

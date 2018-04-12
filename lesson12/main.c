@@ -6,6 +6,17 @@
 #define LED_BLUE  (1U<<2)
 #define LED_GREEN (1U<<3)
 
+
+typedef struct Point{
+    uint16_t x;
+    uint8_t y;
+} Point;
+
+struct Point pa, pb;
+
+
+Point p1, p2;
+
 uint8_t u8a, u8b;
 uint16_t u16c, u16d;
 uint32_t u32e, u32f;
@@ -33,7 +44,9 @@ int *new_swap(int *x, int *y) {
 
 int main() {
 
-    
+    p1.x = sizeof(Point);
+    p1.y = p1.x - 3U;
+  
     u8a = sizeof(u8a);
     u16c = sizeof(uint16_t);
     u32e = sizeof(uint32_t);
