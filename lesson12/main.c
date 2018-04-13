@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include "lm4f120h5qr.h"
+#include "tm4c_cmsis.h"
 #include "delay.h"
 
 #define LED_RED   (1U<<1)
@@ -7,31 +7,24 @@
 #define LED_GREEN (1U<<3)
 
 
-typedef struct Point{
+typedef struct {
     uint16_t x;
     uint8_t y;
 } Point;
 
-struct Point pa, pb;
-
-
 Point p1, p2;
 
-uint8_t u8a, u8b;
-uint16_t u16c, u16d;
-uint32_t u32e, u32f;
+typedef struct {
+    Point top_left;
+    Point bottom_right;
+} Windows;
 
-int8_t s8;
-int16_t s16;
-int32_t s32;
+typedef struct {
+    Point corners[3];
+} Triangle;
 
-
-//unsigned fact(unsigned n);
-void swap(int *x, int *y) {
-    int tmp = *x;
-    *x = *y;
-    *y = tmp;
-}
+Windows w, w2;
+Triangle t;
 
 int *new_swap(int *x, int *y) {
     int static tmp[2];
@@ -43,48 +36,37 @@ int *new_swap(int *x, int *y) {
 }
 
 int main() {
+    Point *pp;
+    Windows *wp;
 
     p1.x = sizeof(Point);
     p1.y = p1.x - 3U;
+    
+    w.top_left.x = 1U;
+    w.bottom_right.y = 2U;
+    
+    t.corners[0].x = 1U;
+    t.corners[2].y = 2U;
   
-    u8a = sizeof(u8a);
-    u16c = sizeof(uint16_t);
-    u32e = sizeof(uint32_t);
+    p2 = p1;
+    w2 = w;
     
-    u8a = 0xA1U;
-    u16c = 0xc1c2U;
-    u32e = 0xe1e2e3e4U;
+    pp = &p1;
+    wp = &w2;
     
-    u8b = u8a;
-    u16d = u16c;
-    u32f = u32e;
+    (*pp).x = 1U;
+    (*wp).top_left = *pp;
     
-    u16c = 40000U;
-    u16d = 30000U;
-    u32e = (uint32_t)u16c+u16d;
+    pp->x = 1U;
+    wp->top_left = *pp;
     
-    u16c = 100U;
-    s32 = 10 - (int16_t)u16c;
     
-    if ((int32_t)u32e > -1) { //always false w/o cast
-        u8a = 1U;
-    }
-    else {
-        u8a = 0U;
-    }
+    SYSCTL->RCGC2 |= (1U<<5); //Turn off Port F clock gating
+    SYSCTL->GPIOHSCTL |= (1U<<5); //enable AHB for GPIO
+    GPIOF_HS->DIR |= (LED_RED|LED_BLUE|LED_GREEN); //set pin to output
+    GPIOF_HS->DEN |= (LED_RED|LED_BLUE|LED_GREEN); //set output type to digital output
     
-    u8a = 0xffU;
-    if ((uint8_t)~u8a ==0x00U) {
-        u8b = 1U;
-    }
-    
-  
-    SYSCTL_RCGCGPIO_R |= (1U<<5); //Turn off Port F clock gating
-    SYSCTL_GPIOHBCTL_R |= (1U<<5); //enable AHB for GPIO
-    GPIO_PORTF_AHB_DIR_R |= (LED_RED|LED_BLUE|LED_GREEN); //set pin to output
-    GPIO_PORTF_AHB_DEN_R |= (LED_RED|LED_BLUE|LED_GREEN); //set output type to digital output
-    
-    GPIO_PORTF_AHB_DATA_BITS_R[LED_BLUE]= LED_BLUE;//turn the blue LED on
+    GPIOF_HS->DATA_Bits[LED_BLUE]= LED_BLUE;//turn the blue LED on
     while (1) {
         int x = 1000000;
         int y = 1000000/2;
@@ -92,11 +74,11 @@ int main() {
         int *p = new_swap(&x, &y);
       
 
-        GPIO_PORTF_AHB_DATA_BITS_R[LED_RED] = LED_RED;
+        GPIOF_HS->DATA_Bits[LED_RED] = LED_RED;
         
         delay(p[0]);
         
-        GPIO_PORTF_AHB_DATA_BITS_R[LED_RED] = 0; //set GPIO data to turn off the LED
+        GPIOF_HS->DATA_Bits[LED_RED] = 0; //set GPIO data to turn off the LED
         
         delay(p[1]);
     }

@@ -32,3 +32,29 @@ typedef struct {
 
 Point p1, p2;
 
+The compiler sometimes do paddings for the parameters in structure because the compiler likes
+the aligned code then non-aligned code.
+This function can be turn off by adding the __packed keyword.
+
+typedef __packed struct {
+};
+
+
+struct can contain other structure.
+
+It's more efficient to use pointer for structure. The parameters in structures can be access with
+-> operator for the pointer to structure.
+
+Point *pp;
+pp->x = 1U;
+
+The STRH instruction use bit shift.
+
+The tm4c_cmsis.h file defines the hardware in structure since the structure use shift byte to save
+data.
+
+__I, __O, __IO keyword defines the parameter with volitile keyword.
+
+
+To include the cm4_core.h and so on:
+project->option->General Option->Library Configuration->CMSIS->Use CMSIS

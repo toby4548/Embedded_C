@@ -2376,9 +2376,9 @@
         <name>$PROJ_DIR$\delay.h</name>
     </file>
     <file>
-        <name>$PROJ_DIR$\lm4f120h5qr.h</name>
+        <name>$PROJ_DIR$\main.c</name>
     </file>
     <file>
-        <name>$PROJ_DIR$\main.c</name>
+        <name>$PROJ_DIR$\tm4c_cmsis.h</name>
     </file>
 </project>
