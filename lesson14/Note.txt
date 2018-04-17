@@ -1,17 +1,1 @@
-Before main:
-1. low level initial: choose clock and so on for the hardware.
-2. choose from call main function or data initialization.
-3. if there is no data section then the start up program call the main function.
-
-Make data initialization part:
-1. check linker map file.
-2. initialize it in program
-3. the initializer byte will be generate in ROM which has the same size as .data in RAM.
-
-Before main is called:
-1. the start program is executed to make sure all value with initial value has the value, and all the other are initialized to zero.
-
-How SP and PC got their values:
-1. That was done from the vector table.
-2. the vector table used in assambly is the general form for all the cortex-m
-3. to use the exactly vector for an exactly board, the vector should be replaced.
+1. Cross development: Develop program which will run on the target machine on host machine.
