@@ -1,4 +1,4 @@
-"C:\Users\Tony\Desktop\Projects\embedded_programming\lesson15\startup_tm4c.c"
+"C:\Users\Tony\Desktop\Projects\embedded_programming\lesson15\bsp.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512

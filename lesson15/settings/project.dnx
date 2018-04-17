@@ -16,7 +16,7 @@
         <ShowSource>1</ShowSource>
     </Trace1>
     <DebugChecksum>
-        <Checksum>192235772</Checksum>
+        <Checksum>674390846</Checksum>
     </DebugChecksum>
     <CodeCoverage>
         <Enabled>_ 0</Enabled>
@@ -95,7 +95,8 @@
         <mode>0</mode>
     </DisassembleMode>
     <Breakpoints>
-        <Count>0</Count>
+        <Bp0>_ "STD_CODE" "0x00000148" 1 0 0 0 "" 0 ""</Bp0>
+        <Count>1</Count>
     </Breakpoints>
     <Aliases>
         <Count>0</Count>
