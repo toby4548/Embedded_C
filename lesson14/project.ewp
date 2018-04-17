@@ -2047,6 +2047,9 @@
         <name>$PROJ_DIR$\main.c</name>
     </file>
     <file>
+        <name>$PROJ_DIR$\startup_tm4c.c</name>
+    </file>
+    <file>
         <name>$PROJ_DIR$\tm4c_cmsis.h</name>
     </file>
 </project>

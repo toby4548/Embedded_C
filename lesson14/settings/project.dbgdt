@@ -1086,7 +1086,7 @@
                 <expressions>
                     <item>p1</item>
                     <item>w</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>

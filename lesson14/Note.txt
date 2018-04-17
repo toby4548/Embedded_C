@@ -1,1 +1,8 @@
 1. Cross development: Develop program which will run on the target machine on host machine.
+2. Use ielfdumparm.exe to dump file from binary file into txt file to check the .o files.
+3. the linker will actually set the placement of memory of the code depend on the embedded system.
+4. the linker links file and solve dependence. Sometimes a circular linking problem is occur, then multiple include is necessary.
+
+To use diy vector table
+1. It sould be place in the .intvec  . Use @ ".intvec" provided by the IAR to place variable in specific location.
+2. use const keyword to place startup code in ROM instead of RAM. 
