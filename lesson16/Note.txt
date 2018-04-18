@@ -1,0 +1,12 @@
+1. to set the vector table. we set the start up PC. We use CSTACK$$Limit which will provide by the linker
+to make the compiler happy. we use extern keyword and cast it to int.
+
+2. for the handlers, we use the define in the tm4c_cmsis.h file.
+
+3. We can use self define handler. It's better to use assert_failed instead of infinity loop to avoid freeze.
+
+4. use #pragma to set alias to handler
+
+5.use the __stackless keyword provide by IAR to avoid falling into hardfault handler again.
+
+6. Add all handler support includes the intterrupt.

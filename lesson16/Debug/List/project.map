@@ -1,0 +1,226 @@
+###############################################################################
+#
+# IAR ELF Linker V8.22.2.15995/W32 for ARM                17/Apr/2018  16:29:15
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Users\Tony\Desktop\Projects\embedded_programming\lesson15\Debug\Exe\project.out
+#    Map file     =  
+#        C:\Users\Tony\Desktop\Projects\embedded_programming\lesson15\Debug\List\project.map
+#    Command line =  
+#        -f C:\Temp\EW51E4.tmp
+#        (C:\Users\Tony\Desktop\Projects\embedded_programming\lesson15\Debug\Obj\bsp.o
+#        C:\Users\Tony\Desktop\Projects\embedded_programming\lesson15\Debug\Obj\delay.o
+#        C:\Users\Tony\Desktop\Projects\embedded_programming\lesson15\Debug\Obj\main.o
+#        C:\Users\Tony\Desktop\Projects\embedded_programming\lesson15\Debug\Obj\startup_tm4c.o
+#        -o
+#        C:\Users\Tony\Desktop\Projects\embedded_programming\lesson15\Debug\Exe\project.out
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map
+#        C:\Users\Tony\Desktop\Projects\embedded_programming\lesson15\Debug\List\project.map
+#        --config
+#        C:\Users\Tony\Desktop\Projects\embedded_programming\lesson15\project.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x00000000 { ro section .intvec };
+"P1":  place in [from 0x00000000 to 0x0003ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 0M, alignment = 8 { };
+"P2":  place in [from 0x20000000 to 0x20007fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind        Address   Size  Object
+  -------            ----        -------   ----  ------
+"A0":                                     0x26c
+  .intvec            const    0x00000000  0x26c  startup_tm4c.o [1]
+                            - 0x0000026c  0x26c
+
+"P1":                                     0x2cb
+  .text              ro code  0x0000026c  0x108  main.o [1]
+  .text              ro code  0x00000374   0x14  delay.o [1]
+  .text              ro code  0x00000388   0x54  startup_tm4c.o [1]
+  .text              ro code  0x000003dc   0x2c  bsp.o [1]
+  .text              ro code  0x00000408   0x38  packbits_init_single.o [5]
+  .text              ro code  0x00000440   0x28  data_init.o [5]
+  .text              ro code  0x00000468   0x22  fpinit_M.o [4]
+  .iar.init_table    const    0x0000048c   0x10  - Linker created -
+  .text              ro code  0x0000049c   0x1e  cmain.o [5]
+  .text              ro code  0x000004ba    0x4  low_level_init.o [3]
+  .text              ro code  0x000004be    0x4  exit.o [3]
+  .text              ro code  0x000004c4    0xa  cexit.o [5]
+  .text              ro code  0x000004d0   0x14  exit.o [6]
+  .rodata            const    0x000004e4    0xc  startup_tm4c.o [1]
+  .rodata            const    0x000004f0    0xc  startup_tm4c.o [1]
+  .rodata            const    0x000004fc    0xc  startup_tm4c.o [1]
+  .rodata            const    0x00000508    0xc  startup_tm4c.o [1]
+  .text              ro code  0x00000514    0xc  cstartup_M.o [5]
+  .rodata            const    0x00000520    0x8  startup_tm4c.o [1]
+  .rodata            const    0x00000528    0x0  packbits_init_single.o [5]
+  Initializer bytes  const    0x00000528    0xf  <for P2-1>
+                            - 0x00000537  0x2cb
+
+"P2", part 1 of 2:                         0x2c
+  P2-1                        0x20000000   0x2c  <Init block>
+    .data            inited   0x20000000    0x4  main.o [1]
+    .data            inited   0x20000004    0x8  main.o [1]
+    .bss             inited   0x2000000c    0x4  main.o [1]
+    .bss             inited   0x20000010    0x8  main.o [1]
+    .bss             inited   0x20000018    0xc  main.o [1]
+    .bss             inited   0x20000024    0x8  main.o [1]
+                            - 0x2000002c   0x2c
+
+"P2", part 2 of 2:                        0x400
+  CSTACK                      0x20000030  0x400  <Block>
+    CSTACK           uninit   0x20000030  0x400  <Block tail>
+                            - 0x20000430  0x400
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0xf (34% of destination):
+          0x00000528   0xf
+    1 destination range, total size 0x2c:
+          0x20000000  0x2c
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+C:\Users\Tony\Desktop\Projects\embedded_programming\lesson15\Debug\Obj: [1]
+    bsp.o                        44
+    delay.o                      20
+    main.o                      264       14       44
+    startup_tm4c.o               84      676
+    -------------------------------------------------
+    Total:                      412      690       44
+
+command line: [2]
+    -------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                        4
+    low_level_init.o              4
+    -------------------------------------------------
+    Total:                        8
+
+m7M_tls.a: [4]
+    fpinit_M.o                   34
+    -------------------------------------------------
+    Total:                       34
+
+rt7M_tl.a: [5]
+    cexit.o                      10
+    cmain.o                      30
+    cstartup_M.o                 12
+    data_init.o                  40
+    packbits_init_single.o       56
+    -------------------------------------------------
+    Total:                      148
+
+shb_l.a: [6]
+    exit.o                       20
+    -------------------------------------------------
+    Total:                       20
+
+    Gaps                          4        2
+    Linker created                        17    1 024
+-----------------------------------------------------
+    Grand Total:                626      709    1 068
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.iar.init_table$$Base   0x0000048c          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x0000049c          --   Gb  - Linker created -
+?main                   0x0000049d         Code  Gb  cmain.o [5]
+BusFault_Handler        0x000003a7    0xa  Code  Gb  startup_tm4c.o [1]
+CSTACK$$Base            0x20000030          --   Gb  - Linker created -
+CSTACK$$Limit           0x20000430         Data  Gb  - Linker created -
+HardFault_Handler       0x00000389    0xa  Code  Gb  startup_tm4c.o [1]
+MemManage_Handler       0x0000039d    0xa  Code  Gb  startup_tm4c.o [1]
+NMI_Handler             0x00000393    0xa  Code  Gb  startup_tm4c.o [1]
+Region$$Table$$Base     0x0000048c          --   Gb  - Linker created -
+Region$$Table$$Limit    0x0000049c          --   Gb  - Linker created -
+SysTick_Handler         0x00000407    0x2  Code  Gb  bsp.o [1]
+Unused_Handler          0x000003bb    0xa  Code  Gb  startup_tm4c.o [1]
+UsageFault_Handler      0x000003b1    0xa  Code  Gb  startup_tm4c.o [1]
+__NVIC_SystemReset      0x000003dd   0x1c  Code  Lc  bsp.o [1]
+__cmain                 0x0000049d         Code  Gb  cmain.o [5]
+__exit                  0x000004d1   0x14  Code  Gb  exit.o [6]
+__iar_data_init3        0x00000441   0x28  Code  Gb  data_init.o [5]
+__iar_init_vfp          0x00000469         Code  Gb  fpinit_M.o [4]
+__iar_packbits_init_single3
+                        0x00000409   0x38  Code  Gb  packbits_init_single.o [5]
+__iar_program_start     0x00000515         Code  Gb  cstartup_M.o [5]
+__iar_systems$$module {Abs}
+                        0x00000001         Data  Gb  command line/config [2]
+__low_level_init        0x000004bb    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00000000  0x26c  Data  Gb  startup_tm4c.o [1]
+_call_main              0x000004a9         Code  Gb  cmain.o [5]
+_exit                   0x000004c5         Code  Gb  cexit.o [5]
+_main                   0x000004b7         Code  Gb  cmain.o [5]
+assert_failed           0x00000401    0x6  Code  Gb  bsp.o [1]
+delay                   0x00000375   0x14  Code  Gb  delay.o [1]
+exit                    0x000004bf    0x4  Code  Gb  exit.o [3]
+main                    0x00000289   0xb4  Code  Gb  main.o [1]
+new_swap                0x0000026d   0x1c  Code  Gb  main.o [1]
+new_swap::tmp           0x20000024    0x8  Data  Lc  main.o [1]
+p1                      0x20000000    0x4  Data  Gb  main.o [1]
+p2                      0x2000000c    0x4  Data  Gb  main.o [1]
+t                       0x20000018    0xc  Data  Gb  main.o [1]
+w                       0x20000004    0x8  Data  Gb  main.o [1]
+w2                      0x20000010    0x8  Data  Gb  main.o [1]
+
+
+[1] = C:\Users\Tony\Desktop\Projects\embedded_programming\lesson15\Debug\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+    626 bytes of readonly  code memory
+    709 bytes of readonly  data memory
+  1 068 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
