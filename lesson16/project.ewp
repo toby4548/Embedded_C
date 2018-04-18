@@ -125,7 +125,7 @@
                 </option>
                 <option>
                     <name>OGUseCmsisDspLib</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>GRuntimeLibThreads</name>
@@ -2041,10 +2041,7 @@
         <name>$PROJ_DIR$\bsp.c</name>
     </file>
     <file>
-        <name>$PROJ_DIR$\delay.c</name>
-    </file>
-    <file>
-        <name>$PROJ_DIR$\delay.h</name>
+        <name>$PROJ_DIR$\bsp.h</name>
     </file>
     <file>
         <name>$PROJ_DIR$\main.c</name>

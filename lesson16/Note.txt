@@ -1,12 +1,13 @@
-1. to set the vector table. we set the start up PC. We use CSTACK$$Limit which will provide by the linker
-to make the compiler happy. we use extern keyword and cast it to int.
+1. Pooling: cpu doing nothing but wating for some condition occur. ===> Stupid
 
-2. for the handlers, we use the define in the tm4c_cmsis.h file.
+2. Interrupt is cleverer. ==> Use a clock(==> System timer(SysTick) in ARM) and someone has to hear it when it rings. 
 
-3. We can use self define handler. It's better to use assert_failed instead of infinity loop to avoid freeze.
+3. Preemption: The cpu is forced to execute interrupt instructions for the next instruction when interrupt line is high.
 
-4. use #pragma to set alias to handler
+4. Use exclusive-OR operator(^=) to toggle the LED.(1->0, 0->1) 
 
-5.use the __stackless keyword provide by IAR to avoid falling into hardfault handler again.
+5. The SysTick count down from the LOAD value to zero and initial to LOAD value again.
+To enable it, set VAL to 0 and CTRL.
 
-6. Add all handler support includes the intterrupt.
+6. To enable interrupt, use function __enable_interrupt() to clean the PREMASK register.
+remember to #include "intrinsics.h"

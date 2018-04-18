@@ -1,4 +1,4 @@
-"C:\Users\Tony\Desktop\Projects\embedded_programming\lesson15\bsp.c"
+"C:\Users\Tony\Desktop\Projects\embedded_programming\lesson16\bsp.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
@@ -282,6 +282,7 @@ C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\arm\CMSIS\DSP\Include
 -D__EDG_CPP11_IL_EXTENSIONS_SUPPORTED=1
 -D__EDG_FLOAT80_ENABLING_POSSIBLE=0
 -D__EDG_FLOAT128_ENABLING_POSSIBLE=0
+-DARM_MATH_CM4=1
 -D_DLIB_CONFIG_FILE_HEADER_NAME="C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.0\\arm\\INC\\c\\DLib_Config_Normal.h"
 -D_DLIB_CONFIG_FILE_STRING="C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.0\\arm\\INC\\c\\DLib_Config_Normal.h"
 -D__VERSION__="IAR ANSI C/C++ Compiler V8.22.2.15995/W32 for ARM"
