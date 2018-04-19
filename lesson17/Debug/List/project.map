@@ -1,0 +1,186 @@
+###############################################################################
+#
+# IAR ELF Linker V8.22.2.15995/W32 for ARM                19/Apr/2018  01:43:16
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Users\Tony\Desktop\Projects\embedded_programming\lesson16\Debug\Exe\project.out
+#    Map file     =  
+#        C:\Users\Tony\Desktop\Projects\embedded_programming\lesson16\Debug\List\project.map
+#    Command line =  
+#        -f C:\Temp\EW1EEC.tmp
+#        (C:\Users\Tony\Desktop\Projects\embedded_programming\lesson16\Debug\Obj\bsp.o
+#        C:\Users\Tony\Desktop\Projects\embedded_programming\lesson16\Debug\Obj\main.o
+#        C:\Users\Tony\Desktop\Projects\embedded_programming\lesson16\Debug\Obj\startup_tm4c.o
+#        -o
+#        C:\Users\Tony\Desktop\Projects\embedded_programming\lesson16\Debug\Exe\project.out
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map
+#        C:\Users\Tony\Desktop\Projects\embedded_programming\lesson16\Debug\List\project.map
+#        --config
+#        C:\Users\Tony\Desktop\Projects\embedded_programming\lesson16\project.icf
+#        --semihosting --entry __iar_program_start "C:\Program Files (x86)\IAR
+#        Systems\Embedded Workbench
+#        8.0\arm\CMSIS\Lib\IAR\iar_cortexM4lf_math.a" --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x00000000 { ro section .intvec };
+"P1":  place in [from 0x00000000 to 0x0003ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 0M, alignment = 8 { };
+"P2":  place in [from 0x20000000 to 0x20007fff] {
+          rw, block CSTACK, block HEAP };
+
+No sections matched the following patterns:
+
+  rw  in "P2"
+
+
+  Section   Kind        Address   Size  Object
+  -------   ----        -------   ----  ------
+"A0":                            0x26c
+  .intvec   const    0x00000000  0x26c  startup_tm4c.o [1]
+                   - 0x0000026c  0x26c
+
+"P1":                            0x1a8
+  .text     ro code  0x0000026c   0x68  main.o [1]
+  .text     ro code  0x000002d4   0x54  startup_tm4c.o [1]
+  .text     ro code  0x00000328   0x3c  bsp.o [1]
+  .text     ro code  0x00000364   0x22  fpinit_M.o [4]
+  .text     ro code  0x00000388   0x1e  cmain.o [5]
+  .text     ro code  0x000003a6    0x4  low_level_init.o [3]
+  .text     ro code  0x000003aa    0x4  exit.o [3]
+  .text     ro code  0x000003b0    0xa  cexit.o [5]
+  .text     ro code  0x000003bc   0x14  exit.o [6]
+  .rodata   const    0x000003d0    0xc  startup_tm4c.o [1]
+  .rodata   const    0x000003dc    0xc  startup_tm4c.o [1]
+  .rodata   const    0x000003e8    0xc  startup_tm4c.o [1]
+  .rodata   const    0x000003f4    0xc  startup_tm4c.o [1]
+  .text     ro code  0x00000400    0xc  cstartup_M.o [5]
+  .rodata   const    0x0000040c    0x8  startup_tm4c.o [1]
+                   - 0x00000414  0x1a8
+
+"P2":                            0x400
+  CSTACK             0x20000000  0x400  <Block>
+    CSTACK  uninit   0x20000000  0x400  <Block tail>
+                   - 0x20000400  0x400
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+C:\Users\Tony\Desktop\Projects\embedded_programming\lesson16\Debug\Obj: [1]
+    bsp.o                  60
+    main.o                104
+    startup_tm4c.o         84      676
+    -------------------------------------------
+    Total:                248      676
+
+command line: [2]
+    -------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                  4
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                  8
+
+m7M_tls.a: [4]
+    fpinit_M.o             34
+    -------------------------------------------
+    Total:                 34
+
+rt7M_tl.a: [5]
+    cexit.o                10
+    cmain.o                30
+    cstartup_M.o           12
+    -------------------------------------------
+    Total:                 52
+
+shb_l.a: [6]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                    6
+    Linker created                        1 024
+-----------------------------------------------
+    Grand Total:          368      676    1 024
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+?main                   0x00000389         Code  Gb  cmain.o [5]
+BusFault_Handler        0x000002f3    0xa  Code  Gb  startup_tm4c.o [1]
+CSTACK$$Base            0x20000000          --   Gb  - Linker created -
+CSTACK$$Limit           0x20000400         Data  Gb  - Linker created -
+HardFault_Handler       0x000002d5    0xa  Code  Gb  startup_tm4c.o [1]
+MemManage_Handler       0x000002e9    0xa  Code  Gb  startup_tm4c.o [1]
+NMI_Handler             0x000002df    0xa  Code  Gb  startup_tm4c.o [1]
+Region$$Table$$Base     0x00000000          --   Gb  - Linker created -
+Region$$Table$$Limit    0x00000000          --   Gb  - Linker created -
+SysTick_Handler         0x0000034b    0xe  Code  Gb  bsp.o [1]
+Unused_Handler          0x00000307    0xa  Code  Gb  startup_tm4c.o [1]
+UsageFault_Handler      0x000002fd    0xa  Code  Gb  startup_tm4c.o [1]
+__NVIC_SystemReset      0x00000329   0x1c  Code  Lc  bsp.o [1]
+__cmain                 0x00000389         Code  Gb  cmain.o [5]
+__exit                  0x000003bd   0x14  Code  Gb  exit.o [6]
+__iar_init_vfp          0x00000365         Code  Gb  fpinit_M.o [4]
+__iar_program_start     0x00000401         Code  Gb  cstartup_M.o [5]
+__iar_systems$$module {Abs}
+                        0x00000001         Data  Gb  command line/config [2]
+__low_level_init        0x000003a7    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00000000  0x26c  Data  Gb  startup_tm4c.o [1]
+_call_main              0x00000395         Code  Gb  cmain.o [5]
+_exit                   0x000003b1         Code  Gb  cexit.o [5]
+_main                   0x000003a3         Code  Gb  cmain.o [5]
+assert_failed           0x00000345    0x6  Code  Gb  bsp.o [1]
+exit                    0x000003ab    0x4  Code  Gb  exit.o [3]
+main                    0x0000026d   0x68  Code  Gb  main.o [1]
+
+
+[1] = C:\Users\Tony\Desktop\Projects\embedded_programming\lesson16\Debug\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+    368 bytes of readonly  code memory
+    676 bytes of readonly  data memory
+  1 024 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
