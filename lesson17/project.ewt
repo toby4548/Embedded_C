@@ -2382,6 +2382,9 @@
         <name>$PROJ_DIR$\startup_tm4c.c</name>
     </file>
     <file>
+        <name>$PROJ_DIR$\TM4C123GH6PM.h</name>
+    </file>
+    <file>
         <name>$PROJ_DIR$\tm4c_cmsis.h</name>
     </file>
 </project>
