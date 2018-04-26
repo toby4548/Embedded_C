@@ -1,8 +1,0 @@
-1. In MSP430, the regular interrupt 1. return different machine instruction  than regular function. 2. save more registers.
-
-2. **RIGHT CLICK** on the register to select group
-
-3. Set PENDSTSET register on ICSR in system control block to 1 in order to triggur the interrupt.
-
-4. For interrupt return, LR has special value as 0xFFFFFFF9, there are other special values used in Cortex-M.(eg. if FPU is enable
-0xFFFFFE9 is used.)
