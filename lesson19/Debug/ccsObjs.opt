@@ -1,1 +1,1 @@
-"./main.o" "./tm4c123gh6pm_startup_ccs_gcc.o" -Wl,-T"../tm4c123gh6pm.lds" 
+"./bsp.o" "./main.o" "./startup_tm4c_gnu.o" -Wl,-T"../tm4c123gh6pm.lds" 
