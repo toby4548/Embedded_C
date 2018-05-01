@@ -1,1 +1,1 @@
-"./bsp.o" "./main.o" "./startup_tm4c_gnu.o" -Wl,-T"../tm4c123gh6pm.lds" 
+"./bsp.o" "./main.o" "./startup_tm4c_gnu.o" -Wl,-T"../tm4c123gh6pm.lds" -Wl,--start-group -lc -Wl,--end-group 
