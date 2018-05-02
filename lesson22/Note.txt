@@ -1,0 +1,8 @@
+1. For RTOS, we use sequencial architecture.
+
+2. It's possible to switch between background loop. RTOS is able to do that automatically.
+
+3.The manually change messed up the memory which is not good.
+
+4. We construct stack for different thread to avoid mess up with memory, however, it may still mess with 
+the register, so we add the fake register value for R4~R11(original preserved for function call).
