@@ -13,11 +13,11 @@
 static uint32_t volatile l_tickCtr;
 
 void SysTick_Handler(void) {
-    ++l_tickCtr;
-    
-    __disable_irq();
-    OS_sched();
-    __enable_irq();
+   ++l_tickCtr;
+   __disable_irq();
+   OS_sched();
+   __enable_irq();
+   
 }
 
 void BSP_init(void) {
@@ -28,10 +28,10 @@ void BSP_init(void) {
 
     SystemCoreClockUpdate();
     SysTick_Config(SystemCoreClock / BSP_TICKS_PER_SEC);
-
-    /* set the SysTick interrupt priority (highest) */
-    NVIC_SetPriority(SysTick_IRQn, 0U);
-
+    
+    //set the systick interrupt priority (highest)
+    NVIC_SetPriority(SysTick_IRQn,0U);
+    
     __enable_irq();
 }
 
