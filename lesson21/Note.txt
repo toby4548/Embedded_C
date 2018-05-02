@@ -1,0 +1,6 @@
+1. The ICDI driver needs to be installed before use the debug tool.(URL: http://www.ti.com/tool/STELLARIS_ICDI_DRIVERS)\
+
+2. Fore/Back ground architecture. Background loop preempt the foreground interrupts. The real time spend in the interrupt is depend on the time spend in the background.
+Due to the simplicity, it is used in lots of consumer product like arduino.
+
+3.event driven code is like a state machine which is more flexible but more complicated.
