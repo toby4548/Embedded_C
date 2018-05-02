@@ -21,13 +21,22 @@ Target DLL:      lmidk-agdi.dll V???
 Dialog DLL:      TCM.DLL V1.35.1.0
  
 <h2>Project:</h2>
-C:\Users\Tony\Desktop\Project\Embedded_C\lesson23\lesson.uvprojx
+C:\Users\Tony\Desktop\Project\Embedded_C\lesson23_old\lesson.uvprojx
 Project File Date:  05/02/2018
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'dbg'
-".\dbg\lesson.axf" - 0 Error(s), 0 Warning(s).
+compiling main.c...
+compiling miros.c...
+miros.c(97): warning: A1581W: Added 2 bytes of padding at address 0x2e
+compiling system_TM4C123GH6PM.c...
+compiling bsp.c...
+linking...
+.\dbg\lesson.axf: Error: L6286E: Relocation #REL:0 in miros.o(.emb_text) with respect to OS_curr. Value(0x1ffffcf8) out of range(0 - 0xfff) for (R_ARM_THM_PC12)
+Not enough information to list load addresses in the image map.
+Finished: 1 information, 0 warning and 1 error messages.
+".\dbg\lesson.axf" - 1 Error(s), 1 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -41,7 +50,8 @@ Package Vendor: Keil
   C:\Keil_v5\ARM\PACK\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:00
+Target not created.
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

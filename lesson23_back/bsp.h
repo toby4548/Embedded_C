@@ -4,6 +4,8 @@
 /* system clock tick [Hz] */
 #define BSP_TICKS_PER_SEC 100U
 
+#include <stdint.h>
+
 void BSP_init(void);
 
 /* get the current value of the clock tick counter (returns immedately) */

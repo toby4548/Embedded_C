@@ -335,9 +335,9 @@
             <v6Rtti>0</v6Rtti>
             <VariousControls>
               <MiscControls></MiscControls>
-              <Define></Define>
+              <Define>__FPU_PRESENT</Define>
               <Undefine></Undefine>
-              <IncludePath>.;..\qpc\include;..\qpc\src;..\qpc\3rd_party\CMSIS\Include;..\qpc\3rd_party\ek-tm4c123gxl</IncludePath>
+              <IncludePath>.;..\qpc\3rd_party\CMSIS\Include;..\qpc\3rd_party\ek-tm4c123gxl</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
