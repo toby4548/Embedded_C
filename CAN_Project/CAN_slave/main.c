@@ -60,6 +60,7 @@ int main(void) {
 	GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
 	UARTStdioConfig(0, 115200, SysCtlClockGet());
 
+
 	// Set up CAN0
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE);
 	GPIOPinConfigure(GPIO_PE4_CAN0RX);
@@ -89,7 +90,7 @@ int main(void) {
 	float intensity;
 
 	while(1) {
-
+	    UARTprintf("DEBUG\n");
 		if(rxFlag) { // rx interrupt has occured
 
 			msg.pui8MsgData = msgData; // set pointer to rx buffer
