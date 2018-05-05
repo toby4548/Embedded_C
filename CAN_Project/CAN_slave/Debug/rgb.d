@@ -20,6 +20,9 @@ rgb.obj: C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/pin_map.h
 rgb.obj: C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/timer.h
 rgb.obj: C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/gpio.h
 rgb.obj: C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/interrupt.h
+rgb.obj: C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/uart.h
+rgb.obj: C:/ti/TivaWare_C_Series-2.1.4.178/utils/uartstdio.h
+rgb.obj: C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.1.LTS/include/stdarg.h
 rgb.obj: ../rgb.h
 
 ../rgb.c: 
@@ -42,4 +45,7 @@ C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/pin_map.h:
 C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/timer.h: 
 C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/gpio.h: 
 C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/interrupt.h: 
+C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/uart.h: 
+C:/ti/TivaWare_C_Series-2.1.4.178/utils/uartstdio.h: 
+C:/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.1.LTS/include/stdarg.h: 
 ../rgb.h: 

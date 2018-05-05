@@ -24,6 +24,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+
 #include "inc/hw_types.h"
 #include "inc/hw_memmap.h"
 #include "inc/hw_timer.h"
@@ -35,6 +36,10 @@
 #include "driverlib/timer.h"
 #include "driverlib/gpio.h"
 #include "driverlib/interrupt.h"
+#include "driverlib/uart.h"
+
+#include "utils/uartstdio.h"
+
 #include "rgb.h"
 
 //*****************************************************************************

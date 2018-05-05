@@ -15,9 +15,13 @@
 #include "driverlib/sysctl.h"
 #include "driverlib/gpio.h"
 #include "driverlib/uart.h"
+#include "driverlib/rom.h"
+#include "driverlib/rom_map.h"
 #include "driverlib/pin_map.h"
 
 #include "utils/uartstdio.h"
+
+
 #include "rgb.h"
 
 volatile bool rxFlag = 0; // msg recieved flag
