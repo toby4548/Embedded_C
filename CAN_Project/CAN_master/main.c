@@ -102,7 +102,7 @@ int main(void) {
 		UARTprintf("Sending colour\tr: %d\tg: %d\tb: %d\n", msgDataPtr[0], msgDataPtr[1], msgDataPtr[2]); // write colour to UART for debugging
 		CANMessageSet(CAN0_BASE, 1, &msg, MSG_OBJ_TYPE_TX); // send as msg object 1
 		//UARTprintf("DEBUG!\n");
-		delay(100); // wait 100ms
+		delay(0.0001); // wait 100ms
 
 		if(errFlag) { // check for errors
 			UARTprintf("CAN Bus Error\n");

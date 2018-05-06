@@ -90,7 +90,7 @@ int main(void) {
 	float intensity;
 
 	while(1) {
-	    UARTprintf("DEBUG\n");
+	    //UARTprintf("DEBUG\n");
 		if(rxFlag) { // rx interrupt has occured
 
 			msg.pui8MsgData = msgData; // set pointer to rx buffer
