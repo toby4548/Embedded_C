@@ -54,7 +54,6 @@ int main(void) {
 	unsigned char *msgDataPtr = (unsigned char *)&msgData; // make a pointer to msgData so we can access individual bytes
 
 	// Run from the PLL at 120 MHz.
-	//sysClock = SysCtlClockFreqSet((SYSCTL_XTAL_25MHZ | SYSCTL_OSC_MAIN | SYSCTL_USE_PLL | SYSCTL_CFG_VCO_480), 120000000);
 	SysCtlClockSet(SYSCTL_SYSDIV_4 | SYSCTL_USE_PLL | SYSCTL_XTAL_16MHZ | SYSCTL_OSC_MAIN);
 
 	// Set up debugging UART
@@ -63,7 +62,6 @@ int main(void) {
 	GPIOPinConfigure(GPIO_PA0_U0RX);
 	GPIOPinConfigure(GPIO_PA1_U0TX);
 	GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
-	//UARTStdioConfig(0, 115200, sysClock); // 115200 baud
 	UARTStdioConfig(0, 115200, SysCtlClockGet());
 
 	// Set up CAN0
@@ -73,7 +71,6 @@ int main(void) {
 	GPIOPinTypeCAN(GPIO_PORTE_BASE, GPIO_PIN_4 | GPIO_PIN_5);
 	SysCtlPeripheralEnable(SYSCTL_PERIPH_CAN0);
 	CANInit(CAN0_BASE);
-	//CANBitRateSet(CAN0_BASE, sysClock, 500000);
 	CANBitRateSet(CAN0_BASE, SysCtlClockGet(), 500000);
 	CANIntRegister(CAN0_BASE, CANIntHandler); // use dynamic vector table allocation
 	CANIntEnable(CAN0_BASE, CAN_INT_MASTER | CAN_INT_ERROR | CAN_INT_STATUS);
@@ -101,7 +98,6 @@ int main(void) {
 		
 		UARTprintf("Sending colour\tr: %d\tg: %d\tb: %d\n", msgDataPtr[0], msgDataPtr[1], msgDataPtr[2]); // write colour to UART for debugging
 		CANMessageSet(CAN0_BASE, 1, &msg, MSG_OBJ_TYPE_TX); // send as msg object 1
-		//UARTprintf("DEBUG!\n");
 		delay(0.0001); // wait 100ms
 
 		if(errFlag) { // check for errors
